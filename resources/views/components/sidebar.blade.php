@@ -14,7 +14,7 @@
               <a href="#" class="menu-toggle nav-link has-dropdown"><i
                   data-feather="briefcase"></i><span>Master Entry</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="#">Company Setup</a></li>
+                <li><a class="nav-link" href="{{route ('company.create') }}">Company Setup</a></li>
               </ul>
             </li>
             <li class="dropdown">

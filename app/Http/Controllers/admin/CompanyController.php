@@ -26,6 +26,10 @@ class CompanyController extends Controller
      */
     public function create()
     {
+        $company = Company::first();
+        if(!empty($company)){
+            return redirect()->route('company.index');
+        }
         return view('admin.company.create');
     }
 
@@ -81,17 +85,16 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $company =  Company::find();
+        $company =  Company::find($id);
         $company->name = $request->name;
         $company->address = $request->address;
         $company->contact = $request->contact;
         $company->email = $request->email;
         $company->regno = $request->regno;
-
         UploadImage($request, $company, 'logo');
 
-    $company->update();
-    return redirect()->route('company.index');
+        $company->update();
+        return redirect()->route('company.index');
     }
 
     /**
