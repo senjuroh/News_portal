@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('position', 'asc')->get();
         return view('admin.category.index', compact('categories'));
     }
 
@@ -27,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $category = Category::orderBy('id', 'desc')->first();
+        return view('admin.category.create', compact('category'));
     }
 
     /**
@@ -41,6 +42,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
+        $category->position = $request->position;
         $category->save();
         return redirect()->route('category.index');
     }

@@ -12,7 +12,13 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="name">Category Name <span class="text-danger">*</span></label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="eg. politicss" value="{{$category->name}}">
+                            <input id="name" class="form-control" type="text" name="name" value="{{$category->name}}">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="position">Menu position <span class="text-danger">*</span></label>
+                            <input id="position" class="form-control" type="number" name="position" value="{{$category->position}}">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Record</button>

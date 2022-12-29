@@ -8,7 +8,7 @@
                 <span></span>
                 <table class="table">
                     <tr>
-                        <th>SN</th>
+                        <th>Position</th>
                         <th>Category</th>
                         <th>Slug</th>
                         <th>Action </th>
@@ -16,7 +16,7 @@
                     <tr>
                         @foreach ($categories as $item)
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td>{{$item->position}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->slug}}</td>
                             <td><a href="{{route('category.edit', $item->id)}}" class="badge badge-primary">Edit</a></td>

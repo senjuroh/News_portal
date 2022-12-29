@@ -10,6 +10,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label for="position">Menu Position </label>
+                            <input id="position" class="form-control" type="number" name="position" value="{{$category->position + 1}}">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label for="name">Category Name <span class="text-danger">*</span></label>
                             <input id="name" class="form-control" type="text" name="name" placeholder="eg. politicss">
                         </div>
