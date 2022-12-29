@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header">
                 @if (empty($company))
-                    <a href="{{route('company.index')}}" class="btn btn-primary">Go Back</a>
+                    <a href="{{route('company.create')}}" class="btn btn-primary">Create Company</a>
                 @else
                     <h5>Company Information</h5>
                 @endif
