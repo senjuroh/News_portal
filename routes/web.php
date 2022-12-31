@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ArticleController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CompanyController;
 use App\Http\Controllers\ProfileController;
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('company', CompanyController::class);
     Route::resource('category', CategoryController::class);
+    Route::resource('article', ArticleController::class);
 });
 
 require __DIR__.'/auth.php';
