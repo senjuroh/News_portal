@@ -48,6 +48,7 @@ class ArticleController extends Controller
         $article->save();
 
         // Pivot Table code goes here
+        $article->category()->attach($request->category_id);
         return redirect()->route('article.index');
     }
 
@@ -70,7 +71,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $article = Article::find($id);
+        return view('admin.article.create', compact('article','categories'));
     }
 
     /**
@@ -82,7 +85,18 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $article = Article::find($id);
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->meta_word = $request->meta_word;
+        $article->meta_description = $request->meta_description;
+        UploadImage($request, $article, 'image');
+        $article->update();
+
+        // Pivot Table code goes here
+        $article->category()->sync($request->category_id);
+        return redirect()->route('article.index');
     }
 
     /**

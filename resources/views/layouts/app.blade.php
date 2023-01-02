@@ -9,13 +9,19 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>News Portal</title>
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+  <link rel="stylesheet" href="/assets/bundles/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="/assets/bundles/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="/assets/bundles/codemirror/theme/duotone-dark.css">
+  <link rel="stylesheet" href="/assets/bundles/jquery-selectric/selectric.css">
   <!-- Template CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.ico' />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -193,6 +199,11 @@
   <!-- General JS Scripts -->
   <script src="/assets/js/app.min.js"></script>
   <!-- JS Libraies -->
+    <script src="/assets/bundles/summernote/summernote-bs4.js"></script>
+  <script src="/assets/bundles/codemirror/lib/codemirror.js"></script>
+  <script src="/assets/bundles/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+  <script src="/assets/bundles/ckeditor/ckeditor.js"></script>
   <script src="/assets/bundles/apexcharts/apexcharts.min.js"></script>
   <!-- Page Specific JS File -->
   <script src="/assets/js/page/index.js"></script>
@@ -200,6 +211,15 @@
   <script src="/assets/js/scripts.js"></script>
   <!-- Custom JS File -->
   <script src="/assets/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    $('.select2').select2({
+        theme:'classic'
+    });
+
+});
+  </script>
 </body>
 
 
